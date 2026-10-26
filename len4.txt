@@ -1,0 +1,102 @@
+% ======================================================================
+% SECTION 2: THE CONTINUOUS RADIAL FRAMEWORK
+% ======================================================================
+\section{The Continuous Radial Framework} 
+\label{sec:radial}
+
+\subsection{The Radial Formulation}
+
+\begin{definition}[Radial Function]
+\label{def:radial_function}
+For integers $m>1$ and $k>1$, define
+\begin{equation}
+    R(m,k) := \frac{1}{m^k} \sum_{n=1}^{m-1} n^k = \sum_{n=1}^{m-1} \left(\frac{n}{m}\right)^k.
+    \label{eq:R_def}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Normalized Form of the Erd\H{o}s--Moser Equation]
+The Diophantine equation
+\begin{equation}
+    \sum_{n=1}^{m-1} n^k = m^k
+    \label{eq:em_original_sec2}
+\end{equation}
+is equivalent to the normalized condition
+\begin{equation}
+    R(m,k) = 1.
+    \label{eq:R_condition_sec2}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Divide both sides of the Erd\H{o}s--Moser equation~\eqref{eq:em_original_sec2} by $m^k$.
+\end{proof}
+
+\subsection{Bounded-Domain Representation}
+
+\begin{definition}[Normalized Grid]
+Let
+\begin{equation}
+    x_n := \frac{n}{m}, \qquad 1\le n \le m-1.
+    \label{eq:x_n_def}
+\end{equation}
+Then
+\begin{equation}
+    x_n \in (0,1)
+    \label{eq:x_n_domain}
+\end{equation}
+and
+\begin{equation}
+    R(m,k) = \sum_{n=1}^{m-1} x_n^k.
+    \label{eq:R_xn}
+\end{equation}
+\end{definition}
+
+\begin{lemma}[Compact-Domain Reformulation]
+For fixed $(m,k)$, the radial function is a finite sum over a partition of the unit interval:
+\begin{equation}
+    R(m,k) = \sum_{n=1}^{m-1} x_n^k, \qquad x_n \in \left\{ \frac{1}{m}, \frac{2}{m}, \dots, \frac{m-1}{m} \right\}.
+    \label{eq:compact_domain_sum}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Immediate from the definition of $x_n$.
+\end{proof}
+
+\begin{remark}
+The reformulation replaces the original unbounded sequence $n^k$ by samples of the polynomial function $f(x)=x^k$ on the compact interval $(0,1)$.
+\end{remark}
+
+\subsection{Asymptotic Interpretation}
+
+\begin{lemma}[Riemann-Sum Structure]
+The radial function admits the representation
+\begin{equation}
+    \frac{R(m,k)}{m} = \frac{1}{m} \sum_{n=1}^{m-1} \left( \frac{n}{m} \right)^k .
+    \label{eq:riemann_sum_rep}
+\end{equation}
+Hence $\frac{R(m,k)}{m}$ is a Riemann sum associated with the integral
+\begin{equation}
+    \int_0^1 x^k\,dx.
+    \label{eq:integral_xk}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The result follows from the identity $\Delta x = 1/m$ and the standard Riemann-sum representation.
+\end{proof}
+
+\begin{theorem}[Analytic Reduction Principle]
+The study of the Erd\H{o}s--Moser equation may be transferred from the discrete equation
+\begin{equation}
+    \sum_{n=1}^{m-1} n^k = m^k
+    \label{eq:discrete_reduction}
+\end{equation}
+to the asymptotic analysis of the normalized quantity
+\begin{equation}
+    R(m,k).
+    \label{eq:normalized_quantity_reduction}
+\end{equation}
+In particular, the Euler--Maclaurin summation formula can be applied to derive asymptotic constraints relating $m$ and $k$.
+\end{theorem}
